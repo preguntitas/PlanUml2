@@ -1,11 +1,13 @@
 @startuml
-:Agente: as agente
-(Enviar solicitud cŕedido) as enviar
-(Enviar solicitud cŕedido personal) as personal
-(Enviar solicitud cŕedido\n empresarial) as empresarial
+:Cliente\nBancario: as cliente
+:Cliente\nCorporativo: as corporativo
+:Cliente\nNormal: as normal
+rectangle "Actor antecesor" as antecesor
+rectangle "Actor descendiente" as descendiente
 
-agente -> enviar
-personal --|> enviar
-empresarial --|> enviar
+cliente <|-- corporativo
+cliente <|-- normal
+cliente <-- antecesor
+normal <-- descendiente
 
 @enduml
