@@ -1,13 +1,10 @@
 @startuml
-:Cliente\nBancario: as cliente
-:Cliente\nCorporativo: as corporativo
-:Cliente\nNormal: as normal
-rectangle "Actor antecesor" as antecesor
-rectangle "Actor descendiente" as descendiente
+left to right direction
+:Empleado: as empleado
+:Administrador: as admin
 
-cliente <|-- corporativo
-cliente <|-- normal
-cliente <-- antecesor
-normal <-- descendiente
+rectangle "Empresa Pedidos" as empresa
+empleado -- empresa
+admin -- empresa
 
 @enduml
