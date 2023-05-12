@@ -1,9 +1,11 @@
 @startuml
-left to right direction
 :Agente: as agente
-(Evaluar\nSolicitud de Crédito) as evaluar
-(Solicitar Informacion adicional al\ncliente) as solicitar
+(Enviar solicitud cŕedido) as enviar
+(Enviar solicitud cŕedido personal) as personal
+(Enviar solicitud cŕedido\n empresarial) as empresarial
 
-agente --> evaluar
-solicitar ..> evaluar : <<extend>>\n Si ingresos<1000
+agente -> enviar
+personal --|> enviar
+empresarial --|> enviar
+
 @enduml
