@@ -1,26 +1,24 @@
 @startuml
 left to right direction
 :Empleado: as empleado
-:Administrador: as admin
-
-rectangle "Empresa Pedidos" as empresa{
-(Introducir\nPedido) as introducir
-(Cancelar\nPedido) as cancelar
-(Obtener Estado\nPedido) as obtener
-(Borrar Pedido) as borrar
-(Buscar Pedido) as buscarP
 (Alta Cliente) as alta
-(Buscar Cliente) as buscarC
-(Nuevo\nProducto) as nuevo
-(Borrar Producto) as borrarP
-}
-empleado -- introducir
-empleado -- cancelar
-empleado -- obtener
-empleado -- borrar
-empleado -- buscarP
+(Introducir\nPedido) as introducir
+(Obtener\nEstado\nPedido) as obtener
+(Cancelar\nPedido) as cancelar
+(Buscar\nCliente) as buscarC
+(Pago en\nCuenta) as pagoCuenta
+(Buscar\nPedido) as buscarP
+(Pago con\n tarjeta) as pagoTarjeta
+
 empleado -- alta
-empleado -- buscarC
-admin -- nuevo
-admin -- borrarP
+empleado -- introducir
+empleado -- obtener
+empleado -- buscarP
+empleado -- cancelar
+alta ..> introducir : extiende
+introducir ..> buscarC : incluye
+pagoTarjeta ..> introducir : extiende
+pagoCuenta ..> introducir : extiende
+obtener ..> buscarP : incluye
+cancelar ..> buscarP : incluye
 @enduml
