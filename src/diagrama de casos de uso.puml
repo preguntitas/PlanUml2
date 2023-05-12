@@ -1,10 +1,9 @@
 @startuml
-:Bibliotecario: as bibliotecario
-(Baja Socio) as baja
-(Buscar Socio) as buscar
-
-bibliotecario --> baja
-baja ..> buscar : <<include>>
-
 left to right direction
+:Agente: as agente
+(Evaluar\nSolicitud de Crédito) as evaluar
+(Solicitar Informacion adicional al\ncliente) as solicitar
+
+agente --> evaluar
+solicitar ..> evaluar : <<extend>>
 @enduml
