@@ -5,5 +5,5 @@ left to right direction
 (Solicitar Informacion adicional al\ncliente) as solicitar
 
 agente --> evaluar
-solicitar ..> evaluar : <<extend>>
+solicitar ..> evaluar : <<extend>>\n Si ingresos<1000
 @enduml
