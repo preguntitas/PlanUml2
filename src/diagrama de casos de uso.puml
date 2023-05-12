@@ -1,4 +1,19 @@
 @startuml
+:Actor: as actor1
+:Actor: as actor2
+rectangle Sistema as sistema {
+(Caso de uso) as caso1
+(Caso de uso) as caso2
+(Caso de uso) as caso3
+}
+rectangle "Entorno del sistema" as entorno
 
+left to right direction
+actor1 -- caso1
+actor1 -- caso2
+actor1 -- caso3 : comunicación
+actor2 -- caso1
+actor2 -- caso3
+entorno -> sistema
 
 @enduml
