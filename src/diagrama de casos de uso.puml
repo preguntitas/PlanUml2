@@ -3,8 +3,24 @@ left to right direction
 :Empleado: as empleado
 :Administrador: as admin
 
-rectangle "Empresa Pedidos" as empresa
-empleado -- empresa
-admin -- empresa
-
+rectangle "Empresa Pedidos" as empresa{
+(Introducir\nPedido) as introducir
+(Cancelar\nPedido) as cancelar
+(Obtener Estado\nPedido) as obtener
+(Borrar Pedido) as borrar
+(Buscar Pedido) as buscarP
+(Alta Cliente) as alta
+(Buscar Cliente) as buscarC
+(Nuevo\nProducto) as nuevo
+(Borrar Producto) as borrarP
+}
+empleado -- introducir
+empleado -- cancelar
+empleado -- obtener
+empleado -- borrar
+empleado -- buscarP
+empleado -- alta
+empleado -- buscarC
+admin -- nuevo
+admin -- borrarP
 @enduml
