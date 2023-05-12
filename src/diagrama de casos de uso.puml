@@ -1,17 +1,10 @@
 @startuml
-:Socio: as socio
 :Bibliotecario: as bibliotecario
-rectangle Bilioteca as biblioteca {
-(Reservar\nLibro) as reservar
-(Prestar\nLibro) as prestar
-(Devolver\nLibro) as devolver
-(Actualizar\nCatálogo) as actualizar
-}
+(Baja Socio) as baja
+(Buscar Socio) as buscar
+
+bibliotecario --> baja
+baja ..> buscar : <<include>>
 
 left to right direction
-socio -- reservar
-socio -- prestar
-socio -- devolver
-bibliotecario -- actualizar
-bibliotecario -- prestar
 @enduml
